@@ -7,8 +7,8 @@ The primary candidates appear to be the following:
 * [Free Software Foundation][fsf]
 * [GNU General Public License (GPL)][gpl]
 
-Also see [Open Source Licenses][osl] for more posibilities.  I find the technical
-stuff sufficiently challeging, who needs all this legal mumbo jumbo!
+Also see [Open Source Licenses][osl] for more possibilities.  I find the technical
+stuff sufficiently challenging, who needs all this legal mumbo jumbo!
 
 In the mean time, how about this:
 

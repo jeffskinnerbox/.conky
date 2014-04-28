@@ -1,23 +1,27 @@
-# Conky Dotfiles
+Conky Dotfiles
+==============
 **Conky Dotfiles** is a mash up of various examples from across the 'net.
 Therefore, out of respect, guilt, and a morbid fear of lawyers, I maintain a reasonably
-complete list of sources.  Check out the referances / sources and you may find
-a few additonal gems.
+complete list of sources.  Check out the references / sources and you may find
+a few additional gems.
 
-### Conky
+Conky
+-----
 
 #### References / Sources
 
 
-### TO DO LIST
+TO DO LIST
+----------
 Odd ball stuff
 
-Some of the sites that proved most usful include:
+Some of the sites that proved most useful include:
 [How to Configure the Conky System Monitor](http://mylinuxramblings.wordpress.com/2010/03/23/how-to-configure-the-conky-system-monitor/)
 [DESKTOP CONKY - A SYSTEM MONITOR FOR X](http://crunchbanglinux.org/wiki/conky)
 [How To: Configuring Conky](http://lusule.wordpress.com/2008/08/07/how-to-4/)
 
-Referance stuff
+Reference stuff
+[Conky is a free, light-weight system monitor for X](http://conky.sourceforge.net/index.html)
 [Conky Manual](http://conky.sourceforge.net/docs.html)
 [Conky Variables](http://conky.sourceforge.net/variables.html)
 [.conkyrc Settings](http://conky.sourceforge.net/config_settings.html)
