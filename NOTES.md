@@ -8,6 +8,14 @@ via [git][01] and [GitHub][02].  For more information, check out these posts:
 Managing the Git Repository and GitHub
 
 ===
+### Install Conky Package
+To install Corky
+
+    sudo apt-get install conky-std
+
+You'll use the [Corky Config Settings][05] to describe general features of how you want your Conky to appear,
+and the [Corky Variables][06] to define what actually gets displayed.
+
 ### Creating the GitHub Repository
 Goto GitHub and create the new repository
 
@@ -38,8 +46,7 @@ add files (or remove) that are required, and then do the commit to the local git
 
     git status
     git add <files>   (or git rm <files>)
-    git commit --dry-run
-    git commit
+    git commit -m "<message>"
 
 ### Updating the Remote (i.e. GitHub) Repository
 To which shows you the URL that Git has stored for the shortname to for
@@ -52,7 +59,10 @@ Now to push your files to the GitHub repository
     git push -u origin master
 
 
+
 [01]:http://git-scm.com/
 [02]:https://github.com/
 [03]:http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/
 [04]:http://blog.sanctum.geek.nz/managing-dot-files-with-git/
+[05]:http://conky.sourceforge.net/config_settings.html
+[06]:http://conky.sourceforge.net/variables.html

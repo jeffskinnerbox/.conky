@@ -2,7 +2,7 @@
 # --------------------------------------------------------------------------------------------- #
 #
 # .conkyrc - derived from various examples across the 'net
-#   Designed to support a 4 core processer running Ubunutu
+#   Designed for a Raspberry Pi
 #
 # You can restart conky by running
 #       killall -SIGUSR1 conky
@@ -73,74 +73,62 @@ xftfont Monospace:size=8:weight=bold	# Xft font to be used
 
 # -------------------- Conky's Displayed System Monitoring Parameters -------------------- #
 TEXT
+# Title / Banner message
+${color5}
+${alignc 40}${font Arial Black:size=22}${time %H:%M:%S}${font}
+${alignc}${time %A} ${time %B} ${time %d}, ${time %Y}
+$color
+
 # General system information
 ${color1}SYSTEM INFORMATION ${hr 2}$color
 ${color0}System: $color$nodename ${alignr}${color0}Uptime: $color$uptime
 ${color0}Kernel: $color$kernel${alignr}${color0}Arch: $color$machine
-${color0}Distribution: $color${execi 99999 lsb_release --description | awk '{ print $2" "$3 }'}
-${color0}CPU Type: $color${execi 99999 grep 'model name' /proc/cpuinfo | awk '{ print $6 }' | sed '2,$d'} / ${execi 99999 grep 'model name' /proc/cpuinfo | wc -l} Cores
-${color0}CPU Speed: $color${freq 0} MHz Current / ${execi 99999 grep 'model name' /proc/cpuinfo | awk '{ print $9 }' | sed '2,$d'} Max
-${color0}Processor Temperature: $color${acpitemp}°C
-#${color0}MAC Address (eth0): $color${execi 99999 cat /sys/class/net/eth0/address }
-#${color0}MAC Address (eth1): $color${execi 99999 cat /sys/class/net/eth1/address }
-#${color0}MAC Address (wlan0): $color${execi 99999 cat /sys/class/net/wlan0/address }
+${color0}Frequency: $color$freq MHz
+${color0}Serial No.: $color${execi 99999 grep Serial /proc/cpuinfo | awk '{ print $3 }'}
+${color0}MAC Address: $color${execi 99999 cat /sys/class/net/eth0/address }
 
 # CPU information
 ${color1}CPU ${hr 2}$color
-${color0}CPU Usage:$color ${cpu cpu0}% ${color7}${cpubar cpu0}
-${cpugraph cpu0 0000ff 00ff00}$color
-${color0}Core 1:$color ${freq 1} MHz ${cpu cpu1}% ${color5}${cpubar cpu1}$color
-${color0}Core 2:$color ${freq 2} MHz ${cpu cpu2}% ${color5}${cpubar cpu2}$color
-${color0}Core 3:$color ${freq 3} MHz ${cpu cpu3}% ${color5}${cpubar cpu3}$color
-${color0}Core 4:$color ${freq 4} MHz ${cpu cpu4}% ${color5}${cpubar cpu4}$color
+${color0}Avg. Load: $color $loadavg
+${color0}CPU Temperature: $color${acpitemp}°C
+${color0}CPU Usage:$color $cpu% ${color7}${cpubar}
+${cpugraph 0000ff 00ff00}$color
 
 # Top running processes
 ${color1}TOP 5 PROCESSES ${hr 2}$color
 ${color0}Processes:$color $processes  ${color0}Running:$color $running_processes
-${color0}Threads:$color $threads  ${color0}Running:$color $running_threads
 ${stippled_hr 2}
 ${color0}CPU Usage$color
 ${color3} NAME              PID    CPU %   MEM$color
 ${color2} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}$color
- ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
- ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
- ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
- ${top name 5} ${top pid 5} ${top cpu 5} ${top mem 5}
+${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+${top name 5} ${top pid 5} ${top cpu 5} ${top mem 5}
 ${stippled_hr 2}
 ${color0}Mem Usage$color
 ${color3} NAME              PID    CPU %   MEM$color
 ${color2} ${top_mem name 1} ${top_mem pid 1} ${top_mem cpu 1} ${top_mem mem 1}$color
- ${top_mem name 2} ${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}
- ${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}
- ${top_mem name 4} ${top_mem pid 4} ${top_mem cpu 4} ${top_mem mem 4}
- ${top_mem name 5} ${top_mem pid 5} ${top_mem cpu 5} ${top_mem mem 5}
+${top_mem name 2} ${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}
+${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}
+${top_mem name 4} ${top_mem pid 4} ${top_mem cpu 4} ${top_mem mem 4}
+${top_mem name 5} ${top_mem pid 5} ${top_mem cpu 5} ${top_mem mem 5}
 
 # Memory and swap space untilization
 ${color1}MEMORY & SWAP ${hr 2}$color
 ${color0}RAM Usage: ${color}$mem / $memmax
 $memperc% ${color6}${membar}$color
+${stippled_hr 2}
 ${color0}Swap Usage: ${color}$swap / $swapmax
 $swapperc% ${color6}${swapbar}$color
 
 # File System utilization
 ${color1}FILE SYSTEM ${hr 2}$color
-${color0}root:$color ${fs_used /} / ${fs_size /}
+${color0}SD Card:$color ${fs_used /} / ${fs_size /}
 ${fs_used_perc /}% ${color8}${fs_bar /}$color
-${color0}boot:$color ${fs_used /boot} / ${fs_size /boot}
-${fs_used_perc /boot}% ${color8}${fs_bar /boot}$color
-${color0}home:$color ${fs_used /home} / ${fs_size /home}
-${fs_used_perc /home}% ${color8}${fs_bar /home}$color
-${color0}backup:$color ${fs_used /mnt/backup} / ${fs_size /mnt/backup}
-${fs_used_perc /mnt/backup}% ${color8}${fs_bar /mnt/backup}$color
-
-# Hard Drive Utilization
-${color1}HARD DRIVE I/O ${hr 2}$color
-${color0}Device:$color /dev/sda
-${color0}Reads: $color${diskio_read /dev/sda}/s${alignr}${color0}Writes: $color${diskio_write /dev/sda}/s
-${color8}${diskiograph_read /dev/sda 20,100 33FF00 FF3333 scale -t}$color${alignr}${color8}${diskiograph_write /dev/sda 20,100 33FF00 FF3333 scale -t}$color
-${color0}Device:$color /dev/md0
-${color0}Reads: $color${diskio_read /dev/md0}/s${alignr}${color0}Writes: $color${diskio_write /dev/md0}/s
-${color8}${diskiograph_read /dev/md0 20,100 33FF00 FF3333 scale -t}$color${alignr}${color8}${diskiograph_write /dev/md0 20,100 33FF00 FF3333 scale -t}$color
+${stippled_hr 2}
+${color0}Reads: $color$diskio_read/s${alignr}${color0}Writes: $color$diskio_write/s
+${color8}${diskiograph_read 20,100 33FF00 FF3333 scale -t}$color${alignr}${color8}${diskiograph_write 20,100 33FF00 FF3333 scale -t}$color
 
 # Ethernet utilization
 ${color1}NETWORKING ${hr 2}$color
@@ -156,5 +144,5 @@ ${color0}${downspeedgraph wlan0 25,120 000000 00ff00} ${alignr}${upspeedgraph wl
 
 # Print the tail of the Linux system log
 ${color1}LOG FILES ${hr 2}$color
-${color0}SysLog Messages$color
+${color0}Linux SysLog Messages$color
 ${color4}${font Arial:size=7}${execi 30 tail -n3 /var/log/syslog | fold -w50}$color$font
