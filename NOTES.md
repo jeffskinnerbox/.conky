@@ -45,8 +45,8 @@ Within the .vim directory, do a "get status" to see what will be included in the
 add files (or remove) that are required, and then do the commit to the local git repository.
 
     git status
-    git add <files>   (or git rm <files>)
-    git commit -m "<message>"
+    git add --all
+    git commit -m "<comment>"
 
 ### Updating the Remote (i.e. GitHub) Repository
 To which shows you the URL that Git has stored for the shortname to for
