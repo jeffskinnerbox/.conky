@@ -7,7 +7,11 @@ killall -SIGUSR1 conky
 
 # update the conky resource file
 trash ../conkyrc
-cp ubuntu-conkyrc ../conkyrc
+if [ $(my_wm) == "i3" ]; then
+    cp ubuntu-i3-conkyrc ../conkyrc
+else
+    cp ubuntu-conkyrc ../conkyrc
+fi
 
 # restart conky, using the new resource file
 # conky should restart automatically, so the command below isn't required
