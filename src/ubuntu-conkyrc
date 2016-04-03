@@ -1,3 +1,5 @@
+# Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
+# Version:      1.0.1
 
 # --------------------------------------------------------------------------------------------- #
 #
@@ -42,8 +44,9 @@ color8 FF8C69				# salmon
 color9 FFE7BA				# wheat
 
 # --- window layout & options --- #
+own_window_class Conky
 own_window yes				# Conky creates its own window instead of using desktop
-own_window_type normal		# If own_window is yes, use type normal, desktop, or override	
+own_window_type override	# If own_window is yes, use type normal, desktop, or override	
 own_window_transparent yes	# Use pseudo transparency with own_window?
 own_window_colour blue		# If own_window_transparent is no, set the background colour
 double_buffer yes			# Use double buffering (reduces flicker)
