@@ -38,7 +38,7 @@ stuff sufficiently challenging, who needs all this legal mumbo jumbo!
 
 [un]:http://unlicense.org/
 [cc]:http://creativecommons.org/
-[mit]:http://opensource.org/licenses/MIT 
+[mit]:http://opensource.org/licenses/MIT
 [fsf]:http://www.fsf.org/
 [gpl]:http://www.gnu.org/licenses/gpl.html
 [osl]:http://opensource.org/licenses

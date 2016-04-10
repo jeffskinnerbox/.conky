@@ -7,7 +7,7 @@ via [git][01] and [GitHub][02].  For more information, check out these posts:
 
 Managing the Git Repository and GitHub
 
-===
+====
 ### Install Conky Package
 To install Corky
 
