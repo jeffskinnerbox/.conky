@@ -1,3 +1,8 @@
+<!--
+Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
+Version:      1.0.3
+-->
+
 # Conky Dotfiles
 **Conky Dotfiles** is a mash up of various examples [Corky][01] from across the 'net.
 Therefore, out of respect, guilt, and a morbid fear of lawyers,
