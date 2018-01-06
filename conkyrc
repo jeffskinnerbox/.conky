@@ -8,6 +8,9 @@ Version:      1.0.4
 .conkyrc - derived from various examples across the 'net
 Designed to support a 4 core processer running Ubuntu
 
+You can start conky via
+	conky --pause=5 --config=/home/jeff/.conky/conkyrc
+
 You can restart conky by running
 	killall -SIGUSR1 conky
 ]]
@@ -16,41 +19,42 @@ You can restart conky by running
 conky.config = {
 -- ------------------------ Conky's Run Time Parameters -----------------------
 
-	update_interval = 2.0,   -- Conky update interval in seconds
-	total_run_times = 0,     -- Number of updates before quitting.  Set to zero to run forever.
-	no_buffers = true,       -- Subtract file system buffers from used memory?
-	cpu_avg_samples = 2,     -- Number of cpu samples to average. Set to 1 to disable averaging
-	net_avg_samples = 2,     -- Number of net samples to average. Set to 1 to disable averaging
+	update_interval = 2.0,          -- Conky update interval in seconds
+	total_run_times = 0,            -- Number of updates before quitting.  Set to zero to run forever.
+	no_buffers = true,              -- Subtract file system buffers from used memory?
+	cpu_avg_samples = 2,            -- Number of cpu samples to average. Set to 1 to disable averaging
+	net_avg_samples = 2,            -- Number of net samples to average. Set to 1 to disable averaging
 
 -- ------------------------ Conky's General Look & Feel -----------------------
 
 -- --- defualt values ---
-	default_color = 'grey',            -- Default color and border color
+	default_color = 'grey',          -- Default color and border color
 	default_bar_width = 0,
-	default_bar_height = 6,            -- Specify a default width and height for bars
+	default_bar_height = 6,          -- Specify a default width and height for bars
 	default_gauge_width = 25,
-	default_gauge_height = 25,         -- Specify a default width and height for gauges
+	default_gauge_height = 25,       -- Specify a default width and height for gauges
 	default_graph_width = 0,
-	default_graph_height = 25,         -- Specify a default width and height for graphs
-	default_outline_color = 'green',   -- Default border and text outline color
-	default_shade_color = 'yellow',    -- Default border and text shading color
+	default_graph_height = 25,       -- Specify a default width and height for graphs
+	default_outline_color = 'green', -- Default border and text outline color
+	default_shade_color = 'yellow',  -- Default border and text shading color
 
 -- --- predefined colors - http://www.kgym.jp/freesoft/xrgb.html ---
-	color0 = '#FFFFFF',     -- white
-	color1 = '#FFA500',     -- orange
-	color2 = '#B22222',     -- firebrick
-	color3 = '#696969',     -- dim gray
-	color4 = '#D3D3D3',     -- light gray
-	color5 = '#2F4F4F',     -- dark slate gray
-	color6 = '#FFEC8B',     -- light golden rod
-	color7 = '#54FF9F',     -- sea green
-	color8 = '#FF8C69',     -- salmon
-	color9 = '#FFE7BA',     -- wheat
+	color0 = '#FFFFFF',              -- white
+	color1 = '#FFA500',              -- orange
+	color2 = '#B22222',              -- firebrick
+	color3 = '#696969',              -- dim gray
+	color4 = '#D3D3D3',              -- light gray
+	color5 = '#2F4F4F',              -- dark slate gray
+	color6 = '#FFEC8B',              -- light golden rod
+	color7 = '#54FF9F',              -- sea green
+	color8 = '#FF8C69',              -- salmon
+	color9 = '#FFE7BA',              -- wheat
 
 -- --- window layout & options ---
 	own_window = true,               -- Conky creates its own window instead of using desktop
 	own_window_class = 'Conky',
-	own_window_type = 'desktop',     -- If own_window is yes, use type normal, desktop, or override
+	own_window_type = 'normal',      -- If own_window is yes, use type normal, desktop, or override
+	own_window_argb_visual =false,
 	own_window_transparent = true,   -- Use pseudo transparency with own_window?
 	own_window_colour = 'blue',      -- If own_window_transparent is no, set the background colour
 	double_buffer = true,            -- Use double buffering (reduces flicker)

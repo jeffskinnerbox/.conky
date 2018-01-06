@@ -18,6 +18,25 @@ Conky is highly configurable and is able to monitor many system variables
 including the status of the CPU, memory, swap space, disk storage, temperatures,
 processes, network interfaces, battery power, system messages, e-mail inboxes, and much more.
 
+### Starting Conky
+Typically, you start corky with the `xsessionrc` file with
+`conky --pause=20 --config=/home/jeff/.conky/conkyrc`,
+but for Gnome, you must create a script via the `gnome-session-properties` utility,
+or equivalently, create the following file named `~/.config/autostart/conky.desktop`:
+
+```
+[Desktop Entry]
+Type=Application
+Exec=conky --pause=20 --config=/home/jeff/.conky/conkyrc
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Conky
+Name=Conky
+Comment[en_US]=Conky system monitor for the X Window System
+Comment=Conky system monitor for the X Window System
+```
+
 ### Debugging Conky
 An easy way to force Conky to reload your `~/.conkyrc`
 configuration file is to us the command `killall -SIGUSR1 conky`.

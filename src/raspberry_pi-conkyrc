@@ -8,6 +8,9 @@ Version:      1.0.4
 .conkyrc - derived from various examples across the 'net
 Designed for a Raspberry Pi
 
+You can start conky via
+	conky --pause=5 --config=/home/jeff/.conky/conkyrc
+
 You can restart conky by running
     killall -SIGUSR1 conky
 ]]
@@ -48,6 +51,7 @@ conky.config = {
 -- --- window layout & options --- #
 	own_window = true,-- Conky creates its own window instead of using desktop
 	own_window_type = 'normal',-- If own_window is yes, use type normal, desktop, or override	
+	own_window_argb_visual =false,
 	own_window_transparent = true,-- Use pseudo transparency with own_window?
 	own_window_colour = 'blue',-- If own_window_transparent is no, set the background colour
 	double_buffer = true,-- Use double buffering (reduces flicker)
