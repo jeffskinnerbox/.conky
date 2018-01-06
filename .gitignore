@@ -4,12 +4,13 @@
 # Each line in this .gitignore file specifies a regular expression pattern
 # that, when matched, the coresponding file will NOT be include in Git processing.
 #
-### ---------- Project Specific Files ---------- ###
+#
+#
+### ------------------------ Project Specific Files ------------------------ ###
 
-### -------------- General Files --------------- ###
+### ------------------------------- General -------------------------------- ###
 
-### -- Compiled Source -- ###
-*.pid
+### Compiled Source ###
 *.pyc
 *.com
 *.class
@@ -18,7 +19,7 @@
 *.o
 *.so
 
-### -- Packages -- ###
+### Packages ###
 *.7z
 *.dmg
 *.gz
@@ -28,12 +29,23 @@
 *.tar
 *.zip
 
-### -- Logs & Databases -- ###
+### Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+### Logs & Databases ###
 *.log
 *.sql
 *.sqlite
+.ipynb_checkpoints
+.ropeproject
+__pycache__
 
-### -- OS Generated Files -- ###
+### OS Generated Files ###
 *.out
 *.swp
 .DS_Store

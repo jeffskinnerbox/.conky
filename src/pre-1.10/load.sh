@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
-# Version:      1.0.4
+# Version:      1.0.3
 
 # utility program to load new conky resource file
 

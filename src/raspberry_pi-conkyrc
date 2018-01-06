@@ -1,80 +1,84 @@
-# Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
-# Version:      1.0.3
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
 
-# --------------------------------------------------------------------------------------------- #
-#
-# .conkyrc - derived from various examples across the 'net
-#   Designed for a Raspberry Pi
-#
-# You can restart conky by running
-#       killall -SIGUSR1 conky
-#
-# --------------------------------------------------------------------------------------------- #
+--[[
+Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
+Version:      1.0.4
 
 
-# -------------------- Conky's Run Time Parameters -------------------- #
+.conkyrc - derived from various examples across the 'net
+Designed for a Raspberry Pi
 
-update_interval 2.0			# Conky update interval in seconds
-total_run_times 0			# Number of updates before quitting.  Set to zero to run forever.
-no_buffers yes				# Subtract file system buffers from used memory?
-cpu_avg_samples 2			# Number of cpu samples to average. Set to 1 to disable averaging
-net_avg_samples 2			# Number of net samples to average. Set to 1 to disable averaging
-
-
-# -------------------- Conky's General Look & Feel -------------------- #
-
-# --- defualt values --- #
-default_color grey			# Default color and border color
-default_bar_size 0 6		# Specify a default width and height for bars.
-default_gauge_size 25 25	# Specify a default width and height for gauges.
-default_graph_size 0 25		# Specify a default width and height for graphs.
-default_outline_color green	# Default border and text outline color
-default_shade_color yellow	# Default border and text shading color
-
-# --- predefined colors - http://www.kgym.jp/freesoft/xrgb.html --- #
-color0 FFFFFF				# white
-color1 FFA500				# orange
-color2 B22222				# firebrick
-color3 696969				# dim gray
-color4 D3D3D3				# light gray
-color5 2F4F4F				# dark slate gray
-color6 FFEC8B				# light golden rod
-color7 54FF9F				# sea green
-color8 FF8C69				# salmon
-color9 FFE7BA				# wheat
-
-# --- window layout & options --- #
-own_window yes				# Conky creates its own window instead of using desktop
-own_window_type normal		# If own_window is yes, use type normal, desktop, or override	
-own_window_transparent yes	# Use pseudo transparency with own_window?
-own_window_colour blue		# If own_window_transparent is no, set the background colour
-double_buffer yes			# Use double buffering (reduces flicker)
-use_spacer right			# Adds spaces to stop object from moving
-maximum_width 600			# Maximum width of window in pixels
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-
-# --- window placment --- #
-alignment top_right         # window placement can be top_right, top_left, bottom_left, bottom_right
-
-# --- borders, margins, and outlines --- #
-draw_graph_borders yes		# Do you want to draw borders around graphs
-border_inner_margin 9		# Window's inner border margin (in pixels)
-border_outer_margin 5		# Window's outer border margin (in pixels)
-gap_x 10					# Gap between borders of screen and text (on x-axis)
-gap_y 40					# Gap between borders of screen and text (on y-axis)
-border_width 10				# Window's border width (in pixels)
-
-# --- Text --- #
-draw_outline no				# Do you want ot draw outlines
-draw_shades no				# Do you want to draw shades
-draw_borders no				# Do you want to draw borders around text
-uppercase no				# set to yes if you want all text to be in uppercase
-use_xft yes					# use the X FreeType interface library (anti-aliased font)
-xftfont Monospace:size=8:weight=bold	# Xft font to be used
+You can restart conky by running
+    killall -SIGUSR1 conky
+]]
 
 
-# -------------------- Conky's Displayed System Monitoring Parameters -------------------- #
-TEXT
+conky.config = {
+-- -------------------- Conky's Run Time Parameters -------------------- #
+
+	update_interval = 2.0,-- Conky update interval in seconds
+	total_run_times = 0,-- Number of updates before quitting.  Set to zero to run forever.
+	no_buffers = true,-- Subtract file system buffers from used memory?
+	cpu_avg_samples = 2,-- Number of cpu samples to average. Set to 1 to disable averaging
+	net_avg_samples = 2,-- Number of net samples to average. Set to 1 to disable averaging
+
+
+-- -------------------- Conky's General Look & Feel -------------------- #
+
+-- --- defualt values --- #
+	default_color = 'grey',-- Default color and border color
+	default_bar_width = 0, default_bar_height = 6,-- Specify a default width and height for bars.
+	default_gauge_width = 25, default_gauge_height = 25,-- Specify a default width and height for gauges.
+	default_graph_width = 0, default_graph_height = 25,-- Specify a default width and height for graphs.
+	default_outline_color = 'green',-- Default border and text outline color
+	default_shade_color = 'yellow',-- Default border and text shading color
+
+-- --- predefined colors - http://www.kgym.jp/freesoft/xrgb.html --- #
+	color0 = '#FFFFFF',-- white
+	color1 = '#FFA500',-- orange
+	color2 = '#B22222',-- firebrick
+	color3 = '#696969',-- dim gray
+	color4 = '#D3D3D3',-- light gray
+	color5 = '#2F4F4F',-- dark slate gray
+	color6 = '#FFEC8B',-- light golden rod
+	color7 = '#54FF9F',-- sea green
+	color8 = '#FF8C69',-- salmon
+	color9 = '#FFE7BA',-- wheat
+
+-- --- window layout & options --- #
+	own_window = true,-- Conky creates its own window instead of using desktop
+	own_window_type = 'normal',-- If own_window is yes, use type normal, desktop, or override	
+	own_window_transparent = true,-- Use pseudo transparency with own_window?
+	own_window_colour = 'blue',-- If own_window_transparent is no, set the background colour
+	double_buffer = true,-- Use double buffering (reduces flicker)
+	use_spacer = 'right',-- Adds spaces to stop object from moving
+	maximum_width = 600,-- Maximum width of window in pixels
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+
+-- --- window placment --- #
+	alignment = 'top_right',-- window placement can be top_right, top_left, bottom_left, bottom_right
+
+-- --- borders, margins, and outlines --- #
+	draw_graph_borders = true,-- Do you want to draw borders around graphs
+	border_inner_margin = 9,-- Window's inner border margin (in pixels)
+	border_outer_margin = 5,-- Window's outer border margin (in pixels)
+	gap_x = 10,-- Gap between borders of screen and text (on x-axis)
+	gap_y = 40,-- Gap between borders of screen and text (on y-axis)
+	border_width = 10,-- Window's border width (in pixels)
+
+-- --- Text --- #
+	draw_outline = false,-- Do you want ot draw outlines
+	draw_shades = false,-- Do you want to draw shades
+	draw_borders = false,-- Do you want to draw borders around text
+	uppercase = false,-- set to yes if you want all text to be in uppercase
+	use_xft = true,-- use the X FreeType interface library (anti-aliased font)
+	font = 'Monospace:size=8:weight=bold',-- Xft font to be used
+
+
+-- -------------------- Conky's Displayed System Monitoring Parameters -------------------- #
+};
+
+conky.text = [[
 # Title / Banner message
 ${color5}
 ${alignc 40}${font Arial Black:size=22}${time %H:%M:%S}${font}
@@ -148,3 +152,4 @@ ${color0}${downspeedgraph wlan0 25,120 000000 00ff00} ${alignr}${upspeedgraph wl
 ${color1}LOG FILES ${hr 2}$color
 ${color0}Linux SysLog Messages$color
 ${color4}${font Arial:size=7}${execi 30 tail -n3 /var/log/syslog | fold -w50}$color$font
+]];
