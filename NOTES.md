@@ -7,11 +7,17 @@ Version:      1.0.4
 In here are instructions on the creation, maintenance, and use of this repository
 via [git][01] and [GitHub][02].  For more information, check out these posts:
 
+* [git - the simple guide](http://rogerdudler.github.io/git-guide/)
 * [Using Git and Github to Manage Your Dotfiles][03]
 * [Managing dot files with Git][04]
+* [The most useful git commands](https://orga.cat/posts/most-useful-git-commands)
+* [git - the simple guide just a simple guide for getting started with git. no deep shit ;)](http://rogerdudler.github.io/git-guide/)
+* [Useful tricks you might not know about Git stash](https://medium.freecodecamp.org/useful-tricks-you-might-not-know-about-git-stash-e8a9490f0a1a)
+* [Git Tutorial](http://fab.cba.mit.edu/classes/4.140/doc/git/)
+* [What is git?](http://fab.cba.mit.edu/classes/863.16/doc/tutorials/version_control/index.html)
+* [The most useful git commands](https://orga.cat/posts/most-useful-git-commands)
 
-Managing the Git Repository and GitHub
-
+## Managing the Git Repository and GitHub
 ====
 ### Install Conky Package
 To install Corky
@@ -62,6 +68,22 @@ the remote (GitHub) repository:
 Now to push your files to the GitHub repository
 
     git push -u origin master
+
+### Retrieving Update From Remote Repository (i.e. GitHub)
+To retrieve these updates on another system, use
+
+    git pull origin master
+
+To overwrite everything in the local directory
+
+    git fetch --all
+    git reset --hard origin/master
+
+Explanation: `git fetch` downloads the latest from remote without trying to merge or rebase anything.
+Then the `git reset` resets the master branch to what you just fetched.
+The `--hard` option changes all the files in your working tree to match the files in `origin/master`.
+If you have any files that are _not_ tracked by Git,
+these files will not be affected.
 
 
 
