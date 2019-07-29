@@ -5,6 +5,9 @@ settings and variables and some settings/variables are removed.
 You can read more about this [here][02].
 The scripts listed here conform to this new syntax.
 
+To find out which fonts are installed,
+use the command line tool `fc-list`.
+
 
 
 [01]:https://diddyinc.com/

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=conky --pause=20 --config=/home/jeff/.conky/conkyrc
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Conky
+Name=Conky
+Comment[en_US]=Conky system monitor for the X Window System
+Comment=Conky system monitor for the X Window System
