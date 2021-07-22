@@ -74,12 +74,12 @@ conky.config = {
 	border_width = 10,               -- Window's border width (in pixels)
 
 -- --- Text ---
-	draw_outline = false,            -- Do you want ot draw outlines
+	draw_outline = false,            -- Do you want to draw outlines
 	draw_shades = false,             -- Do you want to draw shades
 	draw_borders = false,            -- Do you want to draw borders around text
 	uppercase = false,               -- set to yes if you want all text to be in uppercase
 	use_xft = true,                  -- use the X FreeType interface library (anti-aliased font)
-	font = 'Monospace:size=8:weight=bold'  -- Xft font to be used
+	font = 'Monospace:size=7:weight=bold'  -- Xft font to be used
 }
 
 
