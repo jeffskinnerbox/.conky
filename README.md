@@ -46,7 +46,7 @@ NoDisplay=false
 X-GNOME-Autostart-enabled=true
 Name[en_US]=Conky
 Name=Conky
-Comment[en_US]=Conky system monitor for the X Window System
+Comment[en_US]=Conky system monitor for the X Window Syste
 Comment=Conky system monitor for the X Window System
 ```
 
@@ -59,8 +59,23 @@ you do the following
 conky
 
 # launch conky using another resource file
-conky -c /home/jeff/.conky/src/conkytest
+conky -c /home/jeff/.conky/src/conky-test
 ```
+
+By default, Conky monitors the `eth0` & `wlan0` network interface,
+but there’s a good chance that your network interface uses a different name.
+Obtain your network interface name and then replace the `eth0` & `wlan0` values.
+You can get your network interface via this command:
+
+```bash
+# list network interfaces that are up & working
+$ ip address | grep '^[0-9]' | grep 'state UP'
+2: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+4: wlx94dbc95110ca: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+```
+
+Make updates to the `~/.conkyrc` file as required.
+
 
 An easy way to force Conky to reload your `~/.conkyrc`
 resource file is to us the command `killall -SIGUSR1 conky`.
@@ -72,8 +87,8 @@ This saves you the trouble of having to kill and then restart.
 
 ### References / Sources
 * Some of the sites that proved most useful include:
+    * [Ubuntu 20.04 System Monitoring with Conky widgets](https://linuxconfig.org/ubuntu-20-04-system-monitoring-with-conky-widgets)
     * [How to Configure the Conky System Monitor](http://mylinuxramblings.wordpress.com/2010/03/23/how-to-configure-the-conky-system-monitor/)
-    * [DESKTOP CONKY - A SYSTEM MONITOR FOR X](http://crunchbanglinux.org/wiki/conky)
     * [How To: Configuring Conky](http://lusule.wordpress.com/2008/08/07/how-to-4/)
 
 * Reference stuff
