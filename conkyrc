@@ -51,7 +51,6 @@ conky.config = {
 	color9 = '#FFE7BA',              -- wheat
 
 -- --- window layout & options ---
-	xinerama_head = 1,               -- for multi-display, specifies what display conky should appear (note: index starts at 0)
 	own_window = true,               -- Conky creates its own window instead of using desktop
 	own_window_class = 'Conky',
 	own_window_type = 'normal',      -- If own_window is yes, use type normal, desktop, or override
@@ -65,6 +64,7 @@ conky.config = {
 
 -- --- window placment ---
 	alignment = 'top_right',         -- window placement can be top_right, top_left, bottom_left, bottom_right
+	xinerama_head = 1,               -- for multi-display, select the display to post conky (index starts at 0)
 
 -- --- borders, margins, and outlines ---
 	draw_graph_borders = true,       -- Do you want to draw borders around graphs
