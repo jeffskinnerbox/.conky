@@ -126,10 +126,10 @@ $memperc% ${color6}${membar}$color
 ${color0}Swap Usage: ${color}$swap / $swapmax
 $swapperc% ${color6}${swapbar}$color
 ${color1}FILE SYSTEM ${hr 2}$color
-${color0}root:$color ${fs_used /} / ${fs_size /}
-${fs_used_perc /}% ${color8}${fs_bar /}$color
 ${color0}boot:$color ${fs_used /boot/efi} / ${fs_size /boot/efi}
 ${fs_used_perc /boot/efi}% ${color8}${fs_bar /boot/efi}$color
+${color0}root:$color ${fs_used /} / ${fs_size /}
+${fs_used_perc /}% ${color8}${fs_bar /}$color
 ${color0}home:$color ${fs_used /home} / ${fs_size /home}
 ${fs_used_perc /home}% ${color8}${fs_bar /home}$color
 ${color0}backup:$color ${fs_used /mnt/backup} / ${fs_size /mnt/backup}
