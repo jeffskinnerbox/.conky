@@ -93,7 +93,7 @@ ${color0}Kernel: $color$kernel${alignr}${color0}Arch: $color$machine
 ${color0}Distribution: $color${execi 99999 lsb_release --description | awk '{ print $2" "$3 }'} / ${execi 99999 lsb_release --codename | awk '{ print $2" "$3 }'}
 ${color0}CPU Type: $color${execi 99999 grep 'model name' /proc/cpuinfo | awk '{ print $6 }' | sed '2,$d'} / ${execi 99999 grep 'model name' /proc/cpuinfo | wc -l} Cores
 ${color0}CPU Speed: $color${freq 0} MHz Current / ${execi 99999 grep 'model name' /proc/cpuinfo | awk '{ print $9 }' | sed '2,$d'} Max
-${color0}Processor Temperature: $color${execi 99999 sensors | grep 'Package id' | awk '{print $4}'}
+${color0}Processor Temperature: $color${execi 3 sensors | grep 'Package id' | awk '{print $4}'}
 ${color1}CPU ${hr 2}$color
 ${color0}CPU Usage:$color ${cpu cpu0}% ${color7}${cpubar cpu0}
 ${cpugraph cpu0 0000ff 00ff00}$color
